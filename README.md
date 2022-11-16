@@ -1,6 +1,6 @@
 # Genera-password
 
-Live: https://davidefolk.github.io/to-do-list/
+Live: https://davidefolk.github.io/Genera-password/
 
 Generatore casuale di password
 
