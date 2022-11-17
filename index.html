@@ -18,33 +18,52 @@
 </head>
 
 <body>
-    <div class="background pt-5">
-        <div class="container bg-dark text-light text-center" id="showPassword">
-            <h1 class="pass pt-5">**********</h1>
-            <p id="testoOpzioni" class="pt-1"><strong></strong></p>
-
+    <div class="container my-5 py-5 text-center">
+        <div class="row justify-content-center margin">
+            <div class="col-lg-5 bg-dark text-light" id="showPassword">
+                <h1 class="passwordText display-5">**********</h1>
+            </div>
         </div>
+        <div class="row justify-content-center margin">
+            <div class="col-lg-5 bg-dark text-light" id="opzioni">
+                <p id="testoOpzioni" class="pt-1"><strong>232313423434</strong></p>
+            </div>
+        </div>
+        <div class="row justify-content-center margin">
+            <div class="col-lg-5 bg-dark text-light shadow" id="parametri">
 
-        <div class="container bg-dark text-light text-center py-3 shadow" id="parametri">
-            <label for="customRange" class="form-label"><strong>Lunghezza password</strong></label>
-            <input type="range" class="form-range" min="8" max="15" value="10" id="customRange" />
-            <div class="form-check form-switch form-check-reverse pt-3 text-start form-check-inline">
-                <input class="form-check-input numeri" type="checkbox" role="switch" id="SwitchCheckNumeri">
-                <label class="form-check-label" for="SwitchCheckNumeri"><strong>Numeri </strong></label>
-            </div>
-            <div class="form-check form-switch form-check-reverse pt-3 text-start form-check-inline">
-                <input class="form-check-input maiusc" type="checkbox" role="switch" id="SwitchCheckMaiuscole">
-                <label class="form-check-label" for="SwitchCheckMaiuscole"><strong>Maiuscole </strong></label>
-            </div>
-            <div class="form-check form-switch form-check-reverse pt-3 text-start form-check-inline">
-                <input class="form-check-input carattere" type="checkbox" role="switch" id="SwitchCheckCarat">
-                <label class="form-check-label" for="SwitchCheckCarat"><strong>Caratteri speciali
-                    </strong></label>
-            </div>
-            <button type="button" class="btn btn-primary mt-4 mb-3 genera">Genera</button>
+                <label for="customRange" class="form-label"><strong>Lunghezza password</strong></label>
+                <input type="range" class="form-range px-3" min="8" max="15" value="10" id="customRange" />
+                <div class="form-check form-switch form-check-reverse pt-3 text-start form-check-inline">
+                    <input class="form-check-input numeri" type="checkbox" role="switch" id="SwitchCheckNumeri">
+                    <label class="form-check-label" for="SwitchCheckNumeri"><strong>Numeri </strong></label>
+                </div>
+                <div class="form-check form-switch form-check-reverse pt-3 text-start form-check-inline">
+                    <input class="form-check-input maiusc" type="checkbox" role="switch" id="SwitchCheckMaiuscole">
+                    <label class="form-check-label" for="SwitchCheckMaiuscole"><strong>Maiuscole </strong></label>
+                </div>
+                <div class="form-check form-switch form-check-reverse pt-3 text-start form-check-inline">
+                    <input class="form-check-input carattere" type="checkbox" role="switch" id="SwitchCheckCarat">
+                    <label class="form-check-label" for="SwitchCheckCarat"><strong>Caratteri speciali
+                        </strong></label>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary mt-4 mb-3 genera">Genera</button>
+                </div>
 
+            </div>
         </div>
     </div>
+
+    <div class="wave">
+        <p class="text-center text-muted footer">&copy; 2022 Davide</p>
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+
 
 
     <!-- JavaScript Bundle with Popper -->

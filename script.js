@@ -16,13 +16,13 @@ function generaPassword() {
 		let num = Math.floor(Math.random() * stringFinale.length);
 		password += stringFinale.at(num);
 	}
-	$('.pass').text(password);
+	$('.passwordText').text(password);
 }
 
 $(document).on('input', '#customRange', function () {
 	rangeValue = $('#customRange').val();
 	let rangeExample = ''.padStart(rangeValue, '*');
-	$('.pass').text(rangeExample);
+	$('.passwordText').text(rangeExample);
 	$('#testoOpzioni').text(`${rangeValue} caratteri`);
 	$('#testoOpzioni').show();
 	setTimeout(() => {

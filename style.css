@@ -1,42 +1,67 @@
-body,
-html {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+body {
     font-family: 'Roboto', sans-serif;
+    background-color: #0066ff;
 }
-
-.background {
-    background-image: url('images/wave-haikei.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    margin: 0;
-    background-size: 100% 100%;
-}
-
-/* * {
-    box-sizing: border-box;
-} */
 
 #showPassword {
-    height: 9rem;
-    width: 30rem;
     border-radius: 30px 30px 0 0;
+    min-height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #parametri {
-    width: 30rem;
     border-radius: 0 0 30px 30px;
+}
+
+#opzioni {
+    height: 30px;
+    margin-top: -30px;
 }
 
 .form-check-input {
     transform: scale(1.2);
 }
 
-.pass {
+/* .passwordText {
     font-size: 3rem;
+} */
+
+.margin {
+    margin-left: min(2%);
+    margin-right: min(2%);
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(135% + 1.3px);
+    height: 126px;
+}
+
+.wave .shape-fill {
+    fill: #002233;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
