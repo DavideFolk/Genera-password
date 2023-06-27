@@ -1,88 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokèSearch</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <!-- bootstrap -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genera Password</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-    <!-- axios per uso api -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/3dbb4ed71b.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css">
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <div class="container py-4">
-            <!-- <header class="pb-3 mb-4 border-bottom">
-                <a href="" class="d-flex align-items-center text-dark text-decoration-none">
-                    <img class="pokeball" src="images/pokeball.png" alt="">
-                    <span class="fs-1 title">PokèSearch</span>
-                </a>
-            </header> -->
-
-            <div class="p-2 mb-1 bg-light rounded-3">
-                <div class="container-fluid py-5">
-                    <h1 class="display-5 fw-bold"><img class="pokeball" src="images/pokeball.png" alt="">Cerca Pokèmon!
-                    </h1>
-                    <p class="col-md-12 fs-4">Inserisci il nome del pokèmon che vuoi cercare.</p>
-                    <form id="search-form">
-                        <div class=" input-group mx-auto cerca">
-                            <input type="text" class="form-control" placeholder="Nome o numero Pokèmon"
-                                aria-label="Nome Pokèmon" aria-describedby="button-addon2" id="pkmSearch" required>
-                            <button class="btn btn-primary" type="submit" id="button-addon2">Cerca</button>
-                            <button type="button" class="btn btn-dark" id="button-random"><i
-                                    class="fa-solid fa-shuffle"></i> Random</button>
-                        </div>
-                    </form>
-                </div>
+    <div class="container my-5 py-5 text-center">
+        <div class="row justify-content-center margin">
+            <div class="col-lg-5 bg-dark text-light" id="showPassword">
+                <h1 class="passwordText display-5">**********</h1>
             </div>
-
-            <div id="loader" class="spinner-border hidden" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-
-            <div id="cardFail" class="h-100 p-5 text-bg-dark rounded-3 hidden">
-                <div class="container text-center">
-                    <h2><i class="exclamation fa-solid fa-circle-exclamation"></i> Nome o numero Pokèmon non valido</h2>
-                </div>
-            </div>
-
-            <div id="card" class="h-100 p-5 text-bg-dark rounded-3 hidden">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <img id="immagine" src="" alt="">
-                        </div>
-                        <div class="col">
-                            <h1 id="nome">Nome pokèmon</h1>
-                            <br>
-                            <h4 id="numero">n: </h4>
-                            <h4 id="tipo">tipo: </h4>
-                            <h4 id="altezza">altezza: </h4>
-                            <h4 id="peso">peso: </h4>
-                            <h4 id="testo">testo</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <footer class="pt-3 mt-4 text-muted border-top">
-                &copy; Davide 2022 <a href="https://github.com/DavideFolk" target="_blank"><i class="bi bi-github mx-2" style="color: grey; font-size: 1.2rem;"></i></a>
-            </footer>
         </div>
-    </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <div class="row justify-content-center margin">
+            <div class="col-lg-5 bg-dark text-light" id="opzioni">
+                <p id="testoOpzioni" class="pt-1"><strong></strong></p>
+            </div>
+        </div>
+        <div class="row justify-content-center margin">
+            <div class="col-lg-5 bg-dark text-light shadow" id="parametri">
+
+                <label for="customRange" class="form-label"><strong>Lunghezza password</strong></label>
+                <input type="range" class="form-range px-3" min="8" max="15" value="10" id="customRange" />
+                <div class="form-check form-switch form-check-reverse pt-3 text-start form-check-inline">
+                    <input class="form-check-input numeri" type="checkbox" role="switch" id="SwitchCheckNumeri">
+                    <label class="form-check-label" for="SwitchCheckNumeri"><strong>Numeri </strong></label>
+                </div>
+                <div class="form-check form-switch form-check-reverse pt-3 text-start form-check-inline">
+                    <input class="form-check-input maiusc" type="checkbox" role="switch" id="SwitchCheckMaiuscole">
+                    <label class="form-check-label" for="SwitchCheckMaiuscole"><strong>Maiuscole </strong></label>
+                </div>
+                <div class="form-check form-switch form-check-reverse pt-3 text-start form-check-inline">
+                    <input class="form-check-input carattere" type="checkbox" role="switch" id="SwitchCheckCarat">
+                    <label class="form-check-label" for="SwitchCheckCarat"><strong>Caratteri speciali
+                        </strong></label>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary mt-4 mb-3 genera">Genera</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="wave">
+        <p class="text-center text-muted footer">&copy; 2022 Davide <a href="https://github.com/DavideFolk" target="_blank"><i class="bi bi-github mx-2" style="color: grey; font-size: 1.2rem;"></i></a></p>
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 
