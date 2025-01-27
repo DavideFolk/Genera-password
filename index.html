@@ -24,11 +24,20 @@
         <h1 class="text-xl sm:text-3xl font-bold">Crea Password</h1>
     </header>
 
-    <!-- Contenuto principale -->
     <main class="flex flex-col items-center justify-center min-h-screen p-4">
-        <!-- Titolo centrale -->
-        <h2 class="text-5xl sm:text-8xl font-semibold mb-6 text-center passwordText">*************</h2>
-
+        <!-- password -->
+        <!-- password -->
+        <div class="relative w-full max-w-3xl flex items-center justify-center mb-4">
+            <h2 class="text-3xl sm:text-6xl font-semibold text-center passwordText">*************</h2>
+            <!-- bottone salva -->
+            <button class="save-btn hover:text-blue-400 transition-colors invisible absolute -right-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-10 h-10">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                </svg>
+            </button>
+        </div>
         <!-- Slider -->
         <div class="w-full max-w-md">
             <div class="flex justify-between items-center mb-2">
@@ -126,7 +135,7 @@
         <button class="btn btn-primary mt-10 genera">Genera PASSWORD</button>
 
         <!-- Pulsante modale -->
-        <div class="fixed bottom-6 right-6">
+        <div id="modal_button" class="fixed bottom-6 right-6">
             <button onclick="my_modal_1.showModal()"
                 class="flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-save"
@@ -144,22 +153,23 @@
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
                 <h3 class="text-lg font-bold">Password salvate</h3>
-                <p class="py-4">Press ESC key or click on ✕ button to close</p>
+                <div id="passwordList" class="py-4">
+                    <!-- Password aggiunte dinamicamente -->
+                </div>
             </div>
         </dialog>
 
         <!-- alert -->
         <div role="alert" id="update-alert"
-            class="alert alert-info fixed top-4 right-4 max-w-xs bg-blue-500 text-xs p-2 rounded-md shadow-md hidden flex items-center space-x-2">
+            class="alert alert-info fixed top-4 right-4 max-w-xs bg-blue-500 text-white text-xl p-3 rounded-md shadow-md invisible flex items-center space-x-2">
             <!-- Icona -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                class="h-4 w-4 shrink-0 stroke-current">
+                class="h-6 w-6 shrink-0 stroke-current">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-
             <!-- Testo -->
-            <span>Password salvata!</span>
+            <span class="inline-block">Password copiata!</span>
         </div>
 
 
