@@ -28,7 +28,7 @@ $(document).on('input', '#customRange', function () {
 });
 
 // pulsante genera
-$('.genera').click(function (e) {
+$('#genera').click(function (e) {
 	e.preventDefault();
 	generaPassword();
 	$('.save-btn').removeClass('invisible');
